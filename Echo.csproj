@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AnimBehave.cs" />
+    <Compile Include="Assets\LitWorld.cs" />
     <Compile Include="Assets\Scripts\BirdPole.cs" />
     <Compile Include="Assets\Scripts\BirdSpit.cs" />
     <Compile Include="Assets\Scripts\BoxBlur.cs" />
@@ -228,9 +229,17 @@
     <Compile Include="Assets\Scripts\Lever.cs" />
     <Compile Include="Assets\Scripts\Platform.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\RenderTex.cs" />
     <Compile Include="Assets\Scripts\Scrolling.cs" />
     <Compile Include="Assets\Scripts\SoundWave.cs" />
     <Compile Include="Assets\Scripts\UserInterface.cs" />
+    <Compile Include="Assets\Spotlight.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Scripts\NewUnlitShader 1.shader" />
+    <None Include="Assets\Scripts\NewUnlitShader.shader" />
+    <None Include="Assets\Scripts\SimpleBoxBlur.shader" />
+    <None Include="Assets\Scripts\ddInvertedMapped.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
