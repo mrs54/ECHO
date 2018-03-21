@@ -6,28 +6,33 @@ public class SoundWave : MonoBehaviour
 {
     public float liveTime;
     public float maxRange;
-
+    private Animator animator;
     private bool stopMoving;
     private bool reduceLight;
     private float liveTimer;
     private float reduceLightTimer;
     private float reduceTime = 1.0f;
+    public float moveSpeed;
 
+    private bool startedAudio;
+    public List<AudioClip> squeaks;
+    private AudioSource audioSrc;
     // Use this for initialization
-    void Start()
+    protected void Start()
     {
         liveTimer = Time.time;
+        audioSrc = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (!stopMoving)
         {
-            if (GetComponent<BirdSpit>() == null)
-            {
-                GetComponent<Rigidbody2D>().MovePosition(transform.position + transform.right * 0.2f);
-            }
+            
+                GetComponent<Rigidbody2D>().MovePosition(transform.position + transform.right *Time.deltaTime * moveSpeed);
+            
         }
         else
         {
@@ -60,17 +65,40 @@ public class SoundWave : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        //new
+        if (!startedAudio && audioSrc != null)
+        {
+            audioSrc.clip = squeaks[Random.Range(0, squeaks.Count)];
+            audioSrc.Play();
+            startedAudio = true;
+        }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Die()
     {
+        GetComponent<SpriteRenderer>().enabled = false;
+        animator.StopPlayback();
+        StartCoroutine(delayeddeath());
+    }
+    IEnumerator delayeddeath()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(gameObject);
+    }
+    protected void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("HIT");
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
-            GetComponent<SpriteRenderer>().enabled = false;
+            if (audioSrc != null)
+                audioSrc.Stop();
             GetComponent<Light>().enabled = true;
             transform.position = new Vector3(transform.position.x, transform.position.y, 0.5f);
             stopMoving = true;
+            if(animator != null)
+                animator.SetTrigger("impacting");
+
         }
+        
     }
 
     public bool IsStopped()

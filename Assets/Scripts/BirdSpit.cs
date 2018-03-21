@@ -2,27 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BirdSpit : MonoBehaviour
+public class BirdSpit : SoundWave
 {
-    public float moveSpeed;
+    public AudioClip SoundClip;
+
+    public AudioSource SoundSource;
+
     private Vector3 direction;
 
     // Use this for initialization
-    void Start()
+    new void Start()
     {
+        base.Start();
+        SoundSource.clip = SoundClip;
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
-    }
-
-    private void FixedUpdate()
-    {
-        if (!(GetComponent<SoundWave>().IsStopped()))
-        {
-            GetComponent<Rigidbody2D>().MovePosition(transform.position + direction * moveSpeed);
-        }
+        base.Update();
     }
 
     public void SetDirection(Vector3 dir)
@@ -32,12 +30,21 @@ public class BirdSpit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        base.OnTriggerEnter2D(collision);
+        SoundSource.Play();
+        Debug.Log("Sound has played");
         if (!(GetComponent<SoundWave>().IsStopped()))
         {
+          
+
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 collision.gameObject.GetComponent<Player>().Die();
             }
+
+           
+
         }
+        Destroy(gameObject, 5);
     }
 }

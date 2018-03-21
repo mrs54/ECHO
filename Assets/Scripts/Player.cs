@@ -16,10 +16,24 @@ public class Player : MonoBehaviour
     private float fireTimer;
     private int currentScene;
 
+    public float timer;
+    private bool starttimer = false;
+
+    public string screamButton = "Fire1_P1";
+    public string horizontalButton = "Horizontal_P1";
+    public string verticalButton = "Vertical_P1";
+
+    public AudioClip SoundClip;
+
+    public AudioSource SoundSource;
+
+
+
     // Use this for initialization
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
+        SoundSource.clip = SoundClip;
     }
 
     // Update is called once per frame
@@ -27,15 +41,29 @@ public class Player : MonoBehaviour
     {
         if (transform.position.y < -7)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Makes player respawn if they fall below map
+            starttimer = true;
+
+            if (starttimer)
+            {
+                timer -= 1.0f * Time.deltaTime;
+
+                if (timer <= 0.0f)
+                {
+
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Makes player respawn if they fall below map
+                    starttimer = false;
+
+                }
+            }
+            
         }
         velocity = Vector3.zero;
         Cursor.lockState = CursorLockMode.Locked; //locks cursor in death
         if (!dying)
         {
-            velocity = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0.0f) * moveSpeed;
+            velocity = new Vector3(Input.GetAxis(horizontalButton), Input.GetAxis(verticalButton), 0.0f) * moveSpeed;
 
-            if (Input.GetMouseButton(0) && (Time.time - fireTimer) >= fireRate)
+            if (Input.GetButtonDown(screamButton) && (Time.time - fireTimer) >= fireRate)
             {
                 GetComponent<Animator>().SetBool("Scream", true);
                 Instantiate(soundWave,
@@ -68,6 +96,13 @@ public class Player : MonoBehaviour
 
             Die();
         }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Net"))
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 0f;
+            GetComponent<Collider2D>().enabled = true;
+            Debug.Log("cAUGHT EM");
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -76,7 +111,7 @@ public class Player : MonoBehaviour
             collision.gameObject.GetComponent<Animator>().SetBool("Nom", true);
         }
     }
-
+    
     public void Die()
     {
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
@@ -84,5 +119,8 @@ public class Player : MonoBehaviour
         dying = true;
         GetComponent<Rigidbody2D>().gravityScale = 1.0f;
         GetComponent<Collider2D>().enabled = false;
+        SoundSource.Play();
+
+        
     }
 }

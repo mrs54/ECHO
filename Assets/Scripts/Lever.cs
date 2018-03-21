@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
+    private Animator animator;
     public GameObject door;
     // Use this for initialization
+    public AudioSource SoundSource;
+    public AudioClip SoundClip;
+
+
     void Start()
     {
-        
+        SoundSource.clip = SoundClip;
+
     }
 
     // Update is called once per frame
@@ -23,6 +29,18 @@ public class Lever : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("Activated", true);
             door.GetComponent<DoorScript>().Activate();
+            SoundSource.Play();
         }
+    }
+    public void Die()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        animator.StopPlayback();
+        StartCoroutine(delayeddeath());
+    }
+    IEnumerator delayeddeath()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }
