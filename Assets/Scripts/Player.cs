@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
 
     public AudioSource SoundSource;
 
+    public Camera cameraa;
+    public Camera camerab;
 
 
     // Use this for initialization
@@ -34,6 +36,8 @@ public class Player : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
         SoundSource.clip = SoundClip;
+        cameraa.enabled = true;
+        camerab.enabled = false;
     }
 
     // Update is called once per frame
@@ -95,6 +99,9 @@ public class Player : MonoBehaviour
             }
 
             Die();
+
+            cameraa.enabled = false;
+            camerab.enabled = true;
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Net"))

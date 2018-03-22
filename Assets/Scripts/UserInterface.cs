@@ -10,6 +10,8 @@ public class UserInterface : MonoBehaviour
     public Sprite[] sprites;
     private int currentSprite;
     private bool startedAudio;
+    
+
 
     // Use this for initialization
     void Start()
@@ -22,6 +24,7 @@ public class UserInterface : MonoBehaviour
     {
         if (startedAudio && !transform.GetChild(0).GetComponent<AudioSource>().isPlaying)
         {
+
             SceneManager.LoadScene(1);
         }
     }
@@ -43,5 +46,10 @@ public class UserInterface : MonoBehaviour
             transform.GetChild(0).GetComponent<AudioSource>().Play();
             startedAudio = true;
         }
+    }
+
+    public void Options()
+    {
+        SceneManager.LoadScene("RebindMenu");
     }
 }

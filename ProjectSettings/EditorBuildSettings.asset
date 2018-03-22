@@ -29,3 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scene4.unity
     guid: be00ac5cc82f4744d9b3f3ba7f921e82
+  - enabled: 1
+    path: Assets/Scenes/RebindMenu.unity
+    guid: 27690ffcf7b3231458a33966782e4b44

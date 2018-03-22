@@ -11,9 +11,18 @@ public class EndingScroll : MonoBehaviour
 
     private bool play;
     // Use this for initialization
+
+    public IEnumerator Run()
+    {
+        yield return new WaitForSeconds(14f);
+        Debug.Log("DEAD");
+        Application.Quit();
+    }
+
     void Start()
     {
         play = true;
+        StartCoroutine(Run());
     }
 
     // Update is called once per frame
@@ -40,4 +49,6 @@ public class EndingScroll : MonoBehaviour
     {
         play = true;
     }
+    
+    
 }
