@@ -61,6 +61,25 @@ public class OptionMenu : MonoBehaviour {
                 currentKey.GetComponent<Image>().color = normal;
                 currentKey = null;
             }
+
+            if (e.isMouse)
+            {
+                switch (e.button)
+                {
+                    case 0:
+                        keys[currentKey.name] = KeyCode.Mouse0;
+                        currentKey.transform.GetChild(0).GetComponent<Text>().text = "Mouse 0";
+                        break;
+                    case 1:
+                        keys[currentKey.name] = KeyCode.Mouse1;
+                        currentKey.transform.GetChild(0).GetComponent<Text>().text = "Mouse 1";
+                        break;
+
+                }
+
+                currentKey.GetComponent<Image>().color = normal; //Sets thecolor
+                currentKey = null; //Deselects the key
+            }
         }
     }
 

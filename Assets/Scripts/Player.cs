@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     public Camera cameraa;
     public Camera camerab;
 
-
+    KeyCode echoForth = KeyCode.Mouse0;
     // Use this for initialization
     void Start()
     {
@@ -75,6 +75,14 @@ public class Player : MonoBehaviour
                     Quaternion.identity);
                 fireTimer = Time.time;
             }
+            else if (Input.GetKeyDown(GameManager.GM.echo) && (Time.time - fireTimer) >= fireRate)
+            {
+                GetComponent<Animator>().SetBool("Scream", true);
+                Instantiate(soundWave,
+                    transform.position + (transform.right * forwardOffset) + (transform.up * upOffset),
+                    Quaternion.identity);
+                fireTimer = Time.time;
+            }
             else
             {
                 GetComponent<Animator>().SetBool("Scream", false);
@@ -108,7 +116,7 @@ public class Player : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().gravityScale = 0f;
             GetComponent<Collider2D>().enabled = true;
-            Debug.Log("cAUGHT EM");
+            Debug.Log("CAUGHT EM");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

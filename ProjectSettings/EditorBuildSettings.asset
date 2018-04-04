@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/scene2.unity
     guid: 5cfef5b7d21df9a46bfdbebbc57831f8
   - enabled: 1
-    path: Assets/Scenes/scene3.unity
-    guid: 166bf510289589b469731c6ac7201a17
-  - enabled: 1
     path: Assets/Scenes/scene6.unity
     guid: 55d1c199f494d6f42b9b95792c160fb7
+  - enabled: 1
+    path: Assets/Scenes/scene3.unity
+    guid: 166bf510289589b469731c6ac7201a17
   - enabled: 1
     path: Assets/Scenes/scene5.unity
     guid: 632053cdefa67614eb831ce7b41f6d84
@@ -32,3 +32,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RebindMenu.unity
     guid: 27690ffcf7b3231458a33966782e4b44
+  - enabled: 1
+    path: Assets/Scenes/sceneMulti1.unity
+    guid: d784e5aae97f1744295a5ec3f842020b
+  - enabled: 1
+    path: Assets/Scenes/sceneMulti2.unity
+    guid: 05b2602f27c89e24693ebca303ae0b38
+  - enabled: 1
+    path: Assets/Scenes/sceneMulti6.unity
+    guid: c999f84358b22e340899222c97de6367
+  - enabled: 1
+    path: Assets/Scenes/sceneMulti3.unity
+    guid: ac8dc082bde5cc74cbcea7cd7b556327
+  - enabled: 1
+    path: Assets/Scenes/sceneMulti5.unity
+    guid: e1b0c9577934fc8438b5f6ecab58b5b1
+  - enabled: 1
+    path: Assets/Scenes/sceneMulti4.unity
+    guid: 8a51fff413f4545458dff181d96fd757

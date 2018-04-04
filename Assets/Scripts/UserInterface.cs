@@ -52,4 +52,9 @@ public class UserInterface : MonoBehaviour
     {
         SceneManager.LoadScene("RebindMenu");
     }
+
+    public void VS()
+    {
+        SceneManager.LoadScene("SceneMulti1");
+    }
 }

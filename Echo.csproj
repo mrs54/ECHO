@@ -289,12 +289,15 @@
     <Compile Include="Assets\Scripts\BirdSpit.cs" />
     <Compile Include="Assets\Scripts\BlindSwap.cs" />
     <Compile Include="Assets\Scripts\BoxBlur.cs" />
+    <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\Coop.cs" />
     <Compile Include="Assets\Scripts\DoorScript.cs" />
     <Compile Include="Assets\Scripts\EndingScroll.cs" />
     <Compile Include="Assets\Scripts\Fading.cs" />
     <Compile Include="Assets\Scripts\FourPlayer.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Lever.cs" />
+    <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\munch.cs" />
     <Compile Include="Assets\Scripts\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\OwlPole.cs" />
@@ -307,6 +310,7 @@
     <Compile Include="Assets\Spotlight.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Scripts\DetailonEcho.shader" />
     <None Include="Assets\Scripts\NewUnlitShader 1.shader" />
     <None Include="Assets\Scripts\NewUnlitShader.shader" />
     <None Include="Assets\Scripts\SimpleBoxBlur.shader" />
