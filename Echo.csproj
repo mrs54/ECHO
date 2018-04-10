@@ -297,7 +297,9 @@
     <Compile Include="Assets\Scripts\FourPlayer.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Lever.cs" />
+    <Compile Include="Assets\Scripts\LightFollow.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\modeScript.cs" />
     <Compile Include="Assets\Scripts\munch.cs" />
     <Compile Include="Assets\Scripts\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\OwlPole.cs" />

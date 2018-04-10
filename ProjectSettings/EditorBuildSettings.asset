@@ -50,3 +50,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sceneMulti4.unity
     guid: 8a51fff413f4545458dff181d96fd757
+  - enabled: 1
+    path: Assets/Scenes/modeChoose.unity
+    guid: e1d4e9ed7b08cb540894da5c16852370
+  - enabled: 1
+    path: Assets/Scenes/sceneDark1.unity
+    guid: 8c6403c7e2e3dbd4383d922627c8254e
+  - enabled: 1
+    path: Assets/Scenes/sceneDark2.unity
+    guid: 24fcf5844b8dd7f43b4bf88103298114
+  - enabled: 1
+    path: Assets/Scenes/sceneDark3.unity
+    guid: 810f36082acecc643ad2067676902b9c
+  - enabled: 1
+    path: Assets/Scenes/sceneDark4.unity
+    guid: c36d4ea17e8b1894cb11f9a1d7e9bf3b
+  - enabled: 1
+    path: Assets/Scenes/sceneDark5.unity
+    guid: e03628e117d248d489feea944758ab27
+  - enabled: 1
+    path: Assets/Scenes/sceneDark6.unity
+    guid: 4137e47e210a21e43a5a9d6b4582ef46

@@ -3,11 +3,17 @@ SceneListBegin?
 Assets/Scenes/mainMenu.unity
 Assets/Scenes/scene1.unity
 Assets/Scenes/scene2.unity
-Assets/Scenes/scene3.unity
 Assets/Scenes/scene6.unity
+Assets/Scenes/scene3.unity
 Assets/Scenes/scene5.unity
 Assets/Scenes/scene4.unity
 Assets/Scenes/RebindMenu.unity
+Assets/Scenes/sceneMulti1.unity
+Assets/Scenes/sceneMulti2.unity
+Assets/Scenes/sceneMulti6.unity
+Assets/Scenes/sceneMulti3.unity
+Assets/Scenes/sceneMulti5.unity
+Assets/Scenes/sceneMulti4.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -21,6 +27,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+3013a58e34d618a93a0a2982dcedb71b Assembly-CSharp.dll:.OptionMenu
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -88,6 +95,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 b6f311b13eaf91e5921d0b20dbade845 Assembly-CSharp.dll:.Player
 9824a92ce748a4a59b1913558b6e8cec Assembly-CSharp.dll:.BirdPole
 1f5e5d32a397a14ea2238e622327a549 Assembly-CSharp.dll:.PauseMenu
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MenuScript
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -132,6 +140,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 f90c5547da4a6bf78c9f01d423c35266 Assembly-CSharp.dll:.LitWorld
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
+cbebd2d70a50b27f46f9a67eeb39a2f1 Assembly-CSharp.dll:.Controller
 1b93680c6a0daff460db1012d80b1059 Assembly-CSharp.dll:.Platform
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -168,4 +177,4 @@ ffdcd55a11bcd9b994431ae3ca00a65f Assembly-CSharp.dll:.UserInterface
 8733003fbf560819baa0f5788429bff3 Assembly-CSharp.dll:.BirdSpit
 b1765ae86767adc73f8ae646885a4d5d Assembly-CSharp.dll:.munch
 31ffce7996a25b8e2bf978061c43c2b8 Assembly-CSharp.dll:.DoorScript
-3013a58e34d618a93a0a2982dcedb71b Assembly-CSharp.dll:.OptionMenu
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GameManager

@@ -25,11 +25,20 @@ public class UserInterface : MonoBehaviour
         if (startedAudio && !transform.GetChild(0).GetComponent<AudioSource>().isPlaying)
         {
 
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("modeChoose");
         }
     }
 
     public void ChangeImage()
+    {
+        currentSprite++;
+        if (currentSprite > 1)
+        {
+            currentSprite = 0;
+        }
+        buttonImage.sprite = sprites[currentSprite];
+    }
+        public void ChangeCamp()
     {
         currentSprite++;
         if (currentSprite > 1)
@@ -50,11 +59,15 @@ public class UserInterface : MonoBehaviour
 
     public void Options()
     {
-        SceneManager.LoadScene("RebindMenu");
+        SceneManager.LoadScene("mainMenu");
     }
 
     public void VS()
     {
         SceneManager.LoadScene("SceneMulti1");
+    }
+    public void Dark()
+    {
+        SceneManager.LoadScene("sceneDark1");
     }
 }
