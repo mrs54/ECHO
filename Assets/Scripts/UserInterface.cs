@@ -10,13 +10,13 @@ public class UserInterface : MonoBehaviour
     public Sprite[] sprites;
     private int currentSprite;
     private bool startedAudio;
-    
 
+    
 
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -27,8 +27,13 @@ public class UserInterface : MonoBehaviour
 
             SceneManager.LoadScene("modeChoose");
         }
-    }
 
+        if (Input.GetButtonDown("/"))
+        {
+            SceneManager.LoadScene("modeChoose");
+        }
+    }
+    
     public void ChangeImage()
     {
         currentSprite++;
@@ -70,4 +75,21 @@ public class UserInterface : MonoBehaviour
     {
         SceneManager.LoadScene("sceneDark1");
     }
+
+    public void NoEnd()
+    {
+        SceneManager.LoadScene("endless");
+    }
+
+    public void More()
+    {
+        SceneManager.LoadScene("modeMore");
+    }
+
+    public void Less()
+    {
+        SceneManager.LoadScene("modeChoose");
+    }
+
+
 }

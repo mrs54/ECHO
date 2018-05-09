@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/scene2.unity
     guid: 5cfef5b7d21df9a46bfdbebbc57831f8
   - enabled: 1
+    path: Assets/Scenes/scene8.unity
+    guid: 1d1c5a8a2e2069b4e90583411ccd4ab2
+  - enabled: 1
     path: Assets/Scenes/scene6.unity
     guid: 55d1c199f494d6f42b9b95792c160fb7
   - enabled: 1
@@ -23,6 +26,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scene5.unity
     guid: 632053cdefa67614eb831ce7b41f6d84
+  - enabled: 1
+    path: Assets/Scenes/scene7.unity
+    guid: e46af14ac48b5de4dbf4c317e6c7cf2c
+  - enabled: 1
+    path: Assets/Scenes/scene9.unity
+    guid: d5cf798faf2620c4b86525ab561874bc
+  - enabled: 1
+    path: Assets/Scenes/scene10.unity
+    guid: e9f2744827d22724cb21d25b5a98a961
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -71,3 +83,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sceneDark6.unity
     guid: 4137e47e210a21e43a5a9d6b4582ef46
+  - enabled: 1
+    path: Assets/Scenes/modeMore.unity
+    guid: 6581cb9a0ae4167418165271883300be
+  - enabled: 1
+    path: Assets/Scenes/endless.unity
+    guid: caf76e96c3f7b06489578aa67322808c

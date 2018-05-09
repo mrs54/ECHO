@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103113302422218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.44973373, y: -1.5216304, z: 0.5}
+  m_LocalPosition: {x: -8.220917, y: -1.8868327, z: 0.5}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -238,6 +238,8 @@ MonoBehaviour:
   liveTime: 5
   maxRange: 3.2
   moveSpeed: 12
+  usesGravity: 0
+  OWO: {fileID: 0}
   squeaks:
   - {fileID: 8300000, guid: f5f9e4da866a19d4b8bdcaacd095e7a2, type: 3}
   - {fileID: 8300000, guid: fe0c29f03999b90429f7b994a465fd98, type: 3}

@@ -10,6 +10,7 @@ public class Lever : MonoBehaviour
     public AudioSource SoundSource;
     public AudioClip SoundClip;
 
+    private bool hasPlayed = false;
 
     void Start()
     {
@@ -29,9 +30,14 @@ public class Lever : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("Activated", true);
             door.GetComponent<DoorScript>().Activate();
-            SoundSource.Play();
+            //SoundSource.Play();
+            if (!hasPlayed)
+            {
+                SoundSource.PlayOneShot(SoundClip);
+                hasPlayed = true;
+            }
         }
-    }
+        }
     public void Die()
     {
         GetComponent<SpriteRenderer>().enabled = false;

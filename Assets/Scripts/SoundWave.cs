@@ -13,16 +13,36 @@ public class SoundWave : MonoBehaviour
     private float reduceLightTimer;
     private float reduceTime = 1.0f;
     public float moveSpeed;
-
+    public bool usesGravity;
+    private SpriteRenderer echoSpriteRenderer;
+    private bool hasFlipped = false;
+    private bool mfacingRight = false;
     private bool startedAudio;
     public List<AudioClip> squeaks;
     private AudioSource audioSrc;
+
+    private float direction = 1f;
     // Use this for initialization
+    
     protected void Start()
     {
         liveTimer = Time.time;
         audioSrc = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+
+        echoSpriteRenderer = GetComponent<SpriteRenderer>();
+
+        GameObject soundwave = GameObject.Find("SoundWave");
+
+        if (!GameObject.Find("Player").GetComponent<Player>().facingRight)
+        {
+            mfacingRight = true;
+            direction = -1;
+                echoSpriteRenderer.flipX = true;
+        }
+        GetComponent<Rigidbody2D>().MovePosition(transform.position + transform.right * Time.deltaTime * moveSpeed * direction + 
+            (usesGravity ? .15f * Physics.gravity * Time.deltaTime : Vector3.zero));
+
     }
 
     // Update is called once per frame
@@ -30,9 +50,23 @@ public class SoundWave : MonoBehaviour
     {
         if (!stopMoving)
         {
-            
-                GetComponent<Rigidbody2D>().MovePosition(transform.position + transform.right *Time.deltaTime * moveSpeed);
-            
+
+            GetComponent<Rigidbody2D>().MovePosition(transform.position + transform.right * Time.deltaTime * moveSpeed * direction + (usesGravity ?.15f* Physics.gravity * Time.deltaTime:Vector3.zero));
+
+
+            //if (!GameObject.Find("Player").GetComponent <Player> ().facingRight)
+            //{
+            //    GetComponent<Rigidbody2D>().MovePosition(transform.position + transform.right * Time.deltaTime * -moveSpeed + (usesGravity ? .15f * Physics.gravity * Time.deltaTime : Vector3.zero));
+            //    echoSpriteRenderer.flipX = true;
+
+            //    hasFlipped = true;
+
+            //    if (hasFlipped)
+            //        {
+            //            Debug.Log("BAHAAAA");
+            //            hasFlipped = false;
+            //        }
+            //}
         }
         else
         {
@@ -86,7 +120,7 @@ public class SoundWave : MonoBehaviour
     }
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("HIT");
+        
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
             if (audioSrc != null)
@@ -98,7 +132,19 @@ public class SoundWave : MonoBehaviour
                 animator.SetTrigger("impacting");
 
         }
-        
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Border"))
+        {
+            if (audioSrc != null)
+                audioSrc.Stop();
+            GetComponent<Light>().enabled = true;
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0.5f);
+            stopMoving = true;
+            if (animator != null)
+                animator.SetTrigger("impacting");
+
+        }
+
     }
 
     public bool IsStopped()

@@ -30,7 +30,7 @@ public class MenuScript : MonoBehaviour {
 		for(int i = 0; i < menuPanel.childCount; i++)
 		{
 			 if(menuPanel.GetChild(i).name == "echoKey")
-				menuPanel.GetChild(i).GetComponentInChildren<Text>().text = GameManager.GM.echo.ToString();
+				menuPanel.GetChild(i).GetComponentInChildren<Text>().text = Manager.GM.echo.ToString();
 		}
 	}
 
@@ -121,9 +121,9 @@ public class MenuScript : MonoBehaviour {
 		//	PlayerPrefs.SetString("rightKey", GameManager.GM.right.ToString()); //save new key to playerprefs
 		//	break;
 		case "echo":
-			GameManager.GM.echo = newKey; //set jump to new keycode
-			buttonText.text = GameManager.GM.echo.ToString(); //set button text to new key
-			PlayerPrefs.SetString("echoKey", GameManager.GM.echo.ToString()); //save new key to playerprefs
+			Manager.GM.echo = newKey; //set jump to new keycode
+			buttonText.text = Manager.GM.echo.ToString(); //set button text to new key
+			PlayerPrefs.SetString("echoKey", Manager.GM.echo.ToString()); //save new key to playerprefs
 			break;
 		}
 
